@@ -1,0 +1,35 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  overflow-y: auto;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+body {
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./../fonts/Inter-VariableFont.ttf") format("truetype");
+}
