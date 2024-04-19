@@ -4,9 +4,10 @@ export const ChartCoinsMenuContainer = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.colors.popupBackground};
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 250px;
-  height: fit-content;
+  height: 370px;
   padding: 10px;
   gap: 20px;
   border-radius: 16px;

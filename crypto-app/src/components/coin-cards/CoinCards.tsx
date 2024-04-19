@@ -32,6 +32,10 @@ const CoinCards = (): JSX.Element => {
   const coins = useSelector(coinsSelector);
 
   function calculatePriceDifference(coin: ICoin) {
+    if (coin.history === undefined)
+      return {
+        percentageDifference: 0,
+      };
     const keys = Object.keys(coin.history);
     const lastKey = keys.pop();
     let lastValue = 0;
@@ -71,7 +75,7 @@ const CoinCards = (): JSX.Element => {
                 <CoinCardPrice>{coin.price}</CoinCardPrice>
                 <CoinCardPriceChangeContainer>
                   <CoinCardPriceChange>{percentageDifference}%</CoinCardPriceChange>
-                  {parseFloat(percentageDifference) > 0 ? <CoinCardPriceChangePositiveIcon src={increase} /> : <CoinCardPriceChangePositiveIcon src={decrease} />}
+                  {Number(percentageDifference) > 0 ? <CoinCardPriceChangePositiveIcon src={increase} /> : <CoinCardPriceChangePositiveIcon src={decrease} />}
                 </CoinCardPriceChangeContainer>
               </CoinCardSecondRow>
             </CoinCard>
